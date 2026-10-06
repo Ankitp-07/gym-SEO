@@ -1,0 +1,53 @@
+# ========================================================
+# PowerZone Gym - SEO & Security Redirect Rules (.htaccess)
+# ========================================================
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 1. Enforce HTTPS (HTTP -> HTTPS 301 Permanent Redirect)
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # 2. Enforce Non-WWW (www.powerzonegym.com -> powerzonegym.com 301 Redirect)
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^(.*)$ https://%1/$1 [L,R=301]
+
+  # 3. Redirect /index.html to / (Eliminates Duplicate Content for Homepage)
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/ [NC]
+  RewriteRule ^index\.html$ https://%{HTTP_HOST}/ [L,R=301]
+
+  # 4. Clean URLs (Removes .html extension externally)
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^.\ ]+)\.html\ HTTP/ [NC]
+  RewriteRule ^(.*)\.html$ https://%{HTTP_HOST}/$1 [L,R=301]
+
+  # Serve the actual .html file behind the scenes
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}\.html -f
+  RewriteRule ^(.*)$ $1.html [L]
+</IfModule>
+
+# Prevent Directory Browsing
+Options -Indexes
+
+# 5. HTTP Security Headers
+<IfModule mod_headers.c>
+  # Enforce HTTPS via HSTS for 1 year
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+
+  # Prevent MIME-type sniffing
+  Header always set X-Content-Type-Options "nosniff"
+
+  # Prevent Clickjacking
+  Header always set X-Frame-Options "SAMEORIGIN"
+
+  # Legacy XSS Filter
+  Header always set X-XSS-Protection "1; mode=block"
+
+  # SEO-friendly & Privacy Referrer Policy
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Restrict unauthorized browser features
+  Header always set Permissions-Policy "geolocation=(self), microphone=(), camera=()"
+</IfModule>

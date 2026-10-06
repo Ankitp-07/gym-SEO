@@ -1,0 +1,511 @@
+/* =============================================
+   PowerZone Gym - Phase 0 Stylesheet
+   NOTE: Zero SEO in this file. Pure styling only.
+   ============================================= */
+
+/* ---------- Reset & Base ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #222;
+  background: #fff;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+address {
+  font-style: normal;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 48px;
+  background: #1a1a2e;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #f5a623;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-links a {
+  color: #fff;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #f5a623;
+}
+
+/* ---------- Hero (Home) ---------- */
+.hero {
+  min-height: 90vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 48px 24px;
+}
+
+.hero-content h1 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 32px;
+  color: #ccc;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------- Page Hero (inner pages) ---------- */
+.page-hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+  padding: 80px 24px;
+  text-align: center;
+  color: #fff;
+}
+
+.page-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+
+.page-hero p {
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  background: #f5a623;
+  color: #1a1a2e;
+  padding: 14px 32px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.btn:hover {
+  background: #e09410;
+  transform: translateY(-2px);
+}
+
+.btn-white {
+  background: #fff;
+  color: #0f3460;
+}
+
+.btn-white:hover {
+  background: #f0f0f0;
+}
+
+/* ---------- Sections ---------- */
+.section {
+  padding: 80px 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.section-sub {
+  text-align: center;
+  color: #666;
+  margin-bottom: 48px;
+  font-size: 1.05rem;
+}
+
+.grey-bg {
+  background: #f7f7f7;
+  max-width: 100%;
+  padding: 80px 48px;
+}
+
+.grey-bg .section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* ---------- Cards ---------- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  color: #1a1a2e;
+}
+
+.card p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.card img {
+  width: 80px;
+  height: 80px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: #e0e0e0;
+  margin: 0 auto 16px;
+  object-fit: cover;
+}
+
+/* ---------- Reviews ---------- */
+.review-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 28px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.stars {
+  color: #f5a623;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+
+.review-card p {
+  color: #444;
+  font-style: italic;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.reviewer {
+  font-weight: 600;
+  color: #1a1a2e;
+  font-size: 0.9rem;
+}
+
+/* ---------- FAQ ---------- */
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ddd;
+  padding: 20px 0;
+}
+
+.faq-question {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #1a1a2e;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.faq-answer {
+  display: none;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* ---------- Map ---------- */
+.map-wrapper {
+  max-width: 900px;
+  min-height: 380px;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+}
+
+.map-wrapper iframe {
+  width: 100%;
+  height: 380px;
+  border: 0;
+  display: block;
+}
+
+.map-info {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1rem;
+}
+
+.map-info p {
+  margin-bottom: 8px;
+}
+
+.map-info a {
+  color: #0f3460;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* ---------- Pricing ---------- */
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.pricing-card {
+  background: #fff;
+  border: 2px solid #eee;
+  border-radius: 12px;
+  padding: 36px 28px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pricing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.pricing-card.popular {
+  border-color: #f5a623;
+  background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+  color: #fff;
+}
+
+.plan-badge {
+  display: inline-block;
+  background: #f5a623;
+  color: #1a1a2e;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.popular-badge {
+  background: #fff;
+  color: #0f3460;
+}
+
+.pricing-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+}
+
+.price {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #f5a623;
+  margin-bottom: 4px;
+}
+
+.price span {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #999;
+}
+
+.pricing-card.popular .price span {
+  color: #ccc;
+}
+
+.savings {
+  color: #2ecc71;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.pricing-card.popular .savings {
+  color: #a8f0c8;
+}
+
+.plan-features {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 28px;
+}
+
+.plan-features li {
+  padding: 8px 0;
+  font-size: 0.95rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.pricing-card.popular .plan-features li {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ---------- CTA Section ---------- */
+.cta {
+  text-align: center;
+  background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+  color: #fff;
+  max-width: 100%;
+  padding: 80px 48px;
+}
+
+.cta h2 {
+  color: #fff;
+}
+
+.cta .section-sub {
+  color: #ccc;
+}
+
+.contact-info {
+  margin: 24px 0;
+  font-size: 1.1rem;
+}
+
+.contact-info p {
+  margin-bottom: 8px;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  background: #111;
+  color: #ccc;
+  padding: 60px 48px 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-col h3 {
+  color: #f5a623;
+  margin-bottom: 16px;
+  font-size: 1.05rem;
+}
+
+.footer-col p {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.footer-col a {
+  display: block;
+  color: #ccc;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.footer-col a:hover {
+  color: #f5a623;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 24px 0;
+  margin-top: 40px;
+  border-top: 1px solid #333;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 16px 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .section {
+    padding: 48px 20px;
+  }
+
+  .grey-bg {
+    padding: 48px 20px;
+  }
+
+  .pricing-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .cta {
+    padding: 60px 20px;
+  }
+
+  .footer {
+    padding: 40px 20px 0;
+  }
+}

@@ -1,0 +1,6 @@
+# robots.txt for PowerZone Gym (https://powerzonegym.com)
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://powerzonegym.com/sitemap.xml
