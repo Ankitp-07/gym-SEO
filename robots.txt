@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap Location
-Sitemap: https://powerzonegym.com/sitemap.xml
+Sitemap: https://gym-seo.onrender.com/sitemap.xml
